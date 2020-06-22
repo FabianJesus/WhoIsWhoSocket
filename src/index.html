@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="assets/style/main.css"
+    />
+  </head>
+  <body>
+    <div class="typeCard">
+      <label>Tipo de cartas:</label>
+      <input type="button" class="button" value="Simpson" onclick="controller.changeDeck(0)" />
+      <input type="button" class="button" value="Mario" onclick="controller.changeDeck(1)"/>
+    </div>
+    <div class="boardContainer">
+      <section class="board red">
+        <div class="selection" id="boardPlayer"></div>
+        <div class="selected" id="cardPlayer"></img>
+      </section>
+      <section class="aside">
+        <div id="numPlayer">Numero de jugadores: 0</div>
+        <h1 id="playerName">Jugador 1</h1>
+        <div id="Turn">Faltan Jugadores</div>
+        <input type="button" class="button" value="Voltear"
+        onclick="controller.down()" />
+        <input
+          type="button"
+          class="button"
+          value="Pasar Turno"
+          onclick="controller.changeTurn()"
+        />
+        <input type="button" class="button" value="Confirmar" onclick="controller.saidItIs()"/>
+        <div class="chat">
+          <label>Chat</label>
+          <ul class="msg" id="msg"></ul>
+          <div class="chatBar">
+            <input type="text" id="textmsg" />
+            <button class="button" value="enviar" onclick="controller.sendMsg()">Enviar</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="../node_modules/socket.io-client/dist/socket.io.js"></script>
+  <script src="lib/rxjs.js"></script>
+  <!-- <script src="assets/constants/constantsSocket.js"></script> -->
+  <script src="assets/constants/constants.js"></script>
+  <script src="controllers/view/viewController.js"></script>
+  <script src="models/card.js"></script>
+  <script src="models/deck.js"></script>
+  <script src="models/player.js"></script>
+  <script src="services/serviceSocket.js"></script>
+  <script src="services/serviceWhoIsWho.js"></script>
+  <script src="controllers/controllerWhoIsWho.js"></script>
+  <script src="app.js"></script>
+</html>

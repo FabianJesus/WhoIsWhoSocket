@@ -1,0 +1,218 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.boardContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  box-sizing: border-box;
+}
+.space {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.board {
+  height: 100%;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1.5em;
+}
+.selection {
+  margin-top: 2em;
+  width: 100%;
+  height: 70%;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+hr {
+  margin: 0.5rem;
+  border: none;
+  width: 100%;
+}
+.containerCard {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  width: 6rem;
+  height: 14rem;
+}
+.card-space {
+  width: 100%;
+  height: 12rem;
+}
+.card {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 5px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: bottom;
+  transition: all 0.6s;
+  animation: flip-reverse 1s both;
+}
+.card .front {
+  transform: rotateX(0deg);
+}
+.card .back {
+  background: url("../img/back.png");
+  background-size: cover;
+  background-color: yellow;
+  transform: rotateX(180deg);
+}
+.card .front,
+.card .back {
+  position: absolute;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+}
+.card.flip {
+  animation: flip 1s both;
+}
+@keyframes flip {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(-180deg);
+  }
+}
+@keyframes flip-reverse {
+  0% {
+    transform: rotateX(-180deg);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}
+.containerCard input {
+  -webkit-appearance: none;
+  background: lightgray;
+  border-radius: 5px;
+  width: 100%;
+  height: 1rem;
+}
+.containerCard input:hover {
+  background: gray;
+}
+.containerCard input:checked {
+  background: seagreen;
+}
+.aside {
+  margin-top: 2em;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.typeCard {
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 75%;
+  width: 25%;
+  height: 2em;
+  background-color: rgb(255, 102, 0);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.red {
+  background-color: red;
+}
+.selected {
+  margin-top: 2em;
+  width: 9em;
+  height: 9em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5em;
+  background-color: white;
+}
+.selected img {
+  animation: appear 1s both;
+}
+@keyframes appear {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.chat {
+  border-bottom: solid 1px black;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.chat label {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  padding-left: 1em;
+  height: 2em;
+  background-color: aqua;
+}
+.chat .msg {
+  height: 100%;
+  width: 100%;
+}
+.chat .chatBar {
+  height: 2em;
+  width: 100%;
+  display: flex;
+}
+.chat .chatBar input {
+  width: 70%;
+  height: 100%;
+}
+.chat .chatBar button.button {
+  height: 100%;
+  padding: 0;
+  width: 30%;
+}
+.button {
+  padding: 5px;
+  height: 2em;
+  background-color: transparent;
+  color: black;
+  border: 2px solid #00ba7c;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.button:hover {
+  background-color: #00ba7c;
+  color: white;
+}
+.typeCard .button {
+  color: white;
+}
