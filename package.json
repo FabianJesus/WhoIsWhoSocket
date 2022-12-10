@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "nodemon": "^1.19.0",
     "rxjs": "^6.5.2",
     "socket.io": "^2.2.0"
